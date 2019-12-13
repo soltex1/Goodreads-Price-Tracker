@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/soltex1/goodreads-price-tracker-backend#readme",
   "dependencies": {
-    "@hapi/hapi": "^18.4.0"
+    "@hapi/glue": "^6.2.0",
+    "@hapi/good": "^8.2.4",
+    "@hapi/good-console": "^8.1.2",
+    "@hapi/good-squeeze": "^5.2.1",
+    "@hapi/hapi": "^18.4.0",
+    "inert": "^5.1.3"
   }
 }
