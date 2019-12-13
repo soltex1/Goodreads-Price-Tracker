@@ -41,6 +41,10 @@ const getConfig = () => ({
       },
       {
         plugin: require('inert')
+      },
+      {
+        plugin: Path.join(__dirname, '../controllers'),
+        options: {}
       }
     ]
   }
