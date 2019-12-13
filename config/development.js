@@ -43,6 +43,14 @@ const getConfig = () => ({
         plugin: require('inert')
       },
       {
+        plugin: require('hapi-socket.io'),
+        options: {
+          auth: 'jwt',
+          socketoptions: {
+          }
+        }
+      },
+      {
         plugin: Path.join(__dirname, '../controllers'),
         options: {}
       }
