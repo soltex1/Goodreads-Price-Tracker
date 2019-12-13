@@ -1,7 +1,7 @@
-// Declare internals
+const Books = require('./books')
+
 const internals = {}
 
-// Get the user information
 internals.getUser = (request, h) => {
   return 'User';
 }
@@ -15,9 +15,14 @@ internals.routes = [
 ]
 
 exports.plugin = {
-  name: 'user',
+  name: 'user-books',
   version: '1.0.0',
   register: async (server, options) => {
+
+    // child controllers
+    await server.register([
+      Books
+    ], options)
 
     // Routes
     server.route(internals.routes)

@@ -1,3 +1,4 @@
+const Book = require('./Book')
 const User = require('./User')
 
 exports.plugin = {
@@ -7,6 +8,7 @@ exports.plugin = {
     try {
       // child controllers
       await server.register([
+        Book,
         User
       ], options)
 
