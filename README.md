@@ -1,11 +1,13 @@
 
-
+<h1 align="center">
+  <br>
 <img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="book" height="120" align="right" />
+  <br>
+  Goodreads Price Tracker (backend)
+  <br>
+</h1>
 
-# Goodreads Price Tracker (backend)
-
-
-:orange_book: This is a price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.
+:orange_book:<h4 align="center">:orange_book: This is a price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
 
 :convenience_store: Stores available:
 
@@ -25,7 +27,15 @@ This application is divided in two parts:
 * [Backend](https://github.com/soltex1/goodreads-price-tracker-backend) **Node**
 * [Frontend](https://github.com/soltex1/goodreads-price-tracker-frontend) **React**
 
-The project already has the latest version of the frontend compiled. However, you can also access the source code repostory through the link above.
+The project already has the latest version of the frontend compiled. However, you can also access the source code repository through the link above.
 
 
 ### How It Works
+
+1. Make a request to the [Goodreads API](https://www.goodreads.com/api) in order to figure it out if the user exists.
+
+2. Get the books from the `want-to-read` list and parse.
+
+3. For each book, get the price in the available stores, and send a [socket.io](https://socket.io/) event.
+
+This tree points are the main steps of how the application works. The endpoint that send a request to the Goodreads API is the /user/books?
