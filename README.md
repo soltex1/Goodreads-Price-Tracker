@@ -7,11 +7,11 @@
   <br>
 </h1>
 
-<h4 align="center">:orange_book: A Price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
+<h4 align="center">:orange_book: A price tracker for your books listed on Goodreads as want-to-read.</h4>
 
 <p align="center">
   <a href="#description">Description</a> •
-  <a href="#composotion">Composition</a> •
+  <a href="#composition">Composition</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
   <a href="#contribue">Contribute</a> •
