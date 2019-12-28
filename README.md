@@ -1,8 +1,6 @@
 Goodreads Price Tracker (backend) 
 =
-:orange_book:
-
-This is a price tracker for your books listed on Goodreads as `want-to-read`.
+:orange_book: This is a price tracker for your books listed on [GoodReads](https://www.goodreads.com/) as `want-to-read`.
 
 Stores available:
 
