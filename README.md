@@ -1,13 +1,18 @@
 
 <h1 align="center">
   <br>
-<img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="book" height="120" align="right" />
+    <a href="https://github.com/soltex1/goodreads-price-tracker-backend"><img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="goodreadspricetracker" width="200"></a>
   <br>
-  Goodreads Price Tracker (backend)
+  Goodreads Price Tracker
   <br>
 </h1>
 
-:orange_book:<h4 align="center">:orange_book: This is a price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
+:orange_book:<h4 align="center">:orange_book: A Price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
+
+
+### Description
+
+I am an active user on [Goodreads](https://www.goodreads.com/), who is always updating my current readings and also adding new books to my `want-to-read` list. Most of the times when I want to buy a book, I go through my list, pick a book, and then I go check on some shops if there is a good price. So, I decided to create this application to automate the process.
 
 :convenience_store: Stores available:
 
@@ -15,10 +20,6 @@
 * [Wook](https://www.wook.pt/) 
 * [Bertrand](https://www.bertrand.pt/) 
 * [Fnac](https://www.fnac.pt/)
-
-### Description
-
-I am an active user on [Goodreads](https://www.goodreads.com/), who is always updating my current readings and also adding new books to my `want-to-read` list. Most of the times when I want to buy a book, I go through my list, pick a book, and then I go check on some shops if there is a good price. So, I decided to create this application to automate the process.
 
 ### Composition
 
