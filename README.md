@@ -1,16 +1,24 @@
 
 <h1 align="center">
   <br>
-    <a href="https://github.com/soltex1/goodreads-price-tracker-backend"><img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="goodreadspricetracker" width="200"></a>
+    <a href="https://github.com/soltex1/goodreads-price-tracker-backend"><img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="goodreadspricetracker" width="180"></a>
   <br>
   Goodreads Price Tracker
   <br>
 </h1>
 
-:orange_book:<h4 align="center">:orange_book: A Price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
+<h4 align="center">:orange_book: A Price tracker for your books listed on [Goodreads](https://www.goodreads.com/) as `want-to-read`.</h4>
 
+<p align="center">
+  <a href="#description">Description</a> •
+  <a href="#composotion">Composition</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#contribue">Contribute</a> •
+  <a href="#license">License</a>
+</p>
 
-### Description
+## Description
 
 I am an active user on [Goodreads](https://www.goodreads.com/), who is always updating my current readings and also adding new books to my `want-to-read` list. Most of the times when I want to buy a book, I go through my list, pick a book, and then I go check on some shops if there is a good price. So, I decided to create this application to automate the process.
 
@@ -21,7 +29,7 @@ I am an active user on [Goodreads](https://www.goodreads.com/), who is always up
 * [Bertrand](https://www.bertrand.pt/) 
 * [Fnac](https://www.fnac.pt/)
 
-### Composition
+## Composition
 
 This application is divided in two parts:
 
