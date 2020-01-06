@@ -13,14 +13,6 @@ const startServer = async function () {
     await server.start()
     console.log('Server running on %s', server.info.uri)
 
-    server.route({
-      method: 'GET',
-      path: '/hello',
-      handler: (request, h) => {
-        return 'hello world'
-      }
-    })
-
     // General route
     server.route({
       method: 'GET',
