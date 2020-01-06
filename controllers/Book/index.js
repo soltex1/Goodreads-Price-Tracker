@@ -1,11 +1,18 @@
 // Imports
 const { getPrice } = require('../../utils/trackers')
 const { trackers } = require('../../constants/trackers')
+const ErrorHandler = require('../../utils/errorHandler')
 
 // Declare internals
 const internals = {}
 
-// Given a list of books, get the price from the trackers, and send an event
+/**
+ * Given a list of books, get the price from the trackers,
+ * and send an event to the client.
+ * @param request
+ * @param h
+ * @returns {*}
+ */
 internals.sendEvents = (request, h) => {
 
   // Socket io plugin
@@ -15,15 +22,30 @@ internals.sendEvents = (request, h) => {
 
     const bookId = book.id
     const bookIsbn = book.isbn
+    const bookIsbn13 = book.isbn13
 
     // For each tracker, get the price and emit an event
     trackers.forEach(async (tracker) => {
+      try {
 
-      const bookPrice = await getPrice(tracker, bookId, bookIsbn)
-      const trackerName = tracker.name
-      const eventData = { bookId, bookPrice, trackerName }
+        let bookPrice = 'N/A'
+        const trackerName = tracker.name
 
-      io.sockets.emit('welcome', eventData)
+        if (bookIsbn !== null) {
+          bookPrice = await getPrice(tracker, bookId, bookIsbn)
+        }
+
+        if (bookPrice === 'N/A' && bookIsbn13 !== null) {
+          bookPrice = await getPrice(tracker, bookId, bookIsbn13)
+
+        }
+
+        // Send the event to the client
+        io.sockets.emit('book', { bookId, bookPrice, trackerName })
+
+      } catch (e) {
+        console.log('event emit failed: ', e.message)
+      }
     })
   })
 
