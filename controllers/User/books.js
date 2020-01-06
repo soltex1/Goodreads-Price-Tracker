@@ -1,6 +1,5 @@
 // imports
 const Joi = require('@hapi/joi')
-const { trackers } = require('../../constants/trackers')
 const ErrorHandler = require('../../utils/errorHandler')
 
 // declare internals
@@ -12,19 +11,29 @@ internals.scrapper = {
   parse: require('../../utils/scrapper/parser')
 }
 
-internals.getGoodReadsUri = (userId, page, API_KEY) => `https://www.goodreads.com/review/list/${userId}.xml?key=${API_KEY}&page=${page}`
+// Get the good reads request uri
+internals.getGoodReadsUri = (userId, page, API_KEY) => {
+  return `https://www.goodreads.com/review/list/${userId}.xml?key=${API_KEY}&page=${page}&shelf=to-read`
+}
 
-// get goodreads books given a user identifier
+/**
+ * Get user's goodreads 'to-read'.
+ * @param request
+ * @param h
+ * @returns {Promise<void>}
+ */
 internals.getBooks = async (request, h) => {
+
   try {
+
     const { page, userId } = request.query
 
     const goodReadsUri = internals.getGoodReadsUri(userId, page, process.env.GOODREADS_API_KEY)
 
-    // Request
+    // Make the Request
     const response = await internals.scrapper.request(goodReadsUri)
 
-    // Convert the request response xml into json
+    // Convert the xml request response into json
     const responseJSON = await internals.scrapper.convert(response)
 
     // Parse the json
@@ -36,10 +45,15 @@ internals.getBooks = async (request, h) => {
       url: '/books/events',
       allowInternals: true,
       payload: {
-        books: responseParsed.books.map((book) => { return { id: book.id, isbn: book.isbn }})
+        books: responseParsed.books.map((book) => ({
+          id: book.id,
+          isbn: book.isbn,
+          isbn13: book.isbn13
+        }))
       }
     })
 
+    // Return the parsed json
     return responseParsed
 
   } catch (e) {
@@ -59,7 +73,6 @@ internals.routes = [
           userId: Joi.string().required()
         }),
       },
-      /*
       response: {
         schema: Joi.object({
           books: Joi.array().items(
@@ -68,22 +81,25 @@ internals.routes = [
               title: Joi.string().required(),
               isbn: Joi.string().required().allow(null),
               isbn13: Joi.string().required().allow(null),
+              author: Joi.string().required().allow(null),
+              numPages: Joi.number().allow(null),
+              avgRating: Joi.number().required().allow(null),
               image_url: Joi.string().required(),
               prices: {
-                wook: Joi.string().allow(null),
-                book_depository: Joi.string().allow(null)
+                bertrand: Joi.string().allow(null),
+                book_depository: Joi.string().allow(null),
+                fnac: Joi.string().allow(null),
+                wook: Joi.string().allow(null)
               }
             })
           ),
           meta: Joi.object({
-            start: Joi.string().required(),
-            end: Joi.string().required(),
-            total: Joi.string().required(),
-            numpages: Joi.string().required(),
-            currentpage: Joi.string().required()
+            totalItems: Joi.number().required().allow(null),
+            numPages: Joi.number().required().allow(null),
+            currentPage: Joi.number().required().allow(null),
           })
         })
-      }*/
+      }
     }
   }
 ]
