@@ -12,10 +12,12 @@ const internals = {}
 internals.converter = async (data) => {
   return new Promise((resolve, reject) => {
     ParseString(data, function (err, json) {
-      if (err)
-        reject(err)
-      else
+      if (err) {
+        reject({ name: 'JsonConversionError' })
+      }
+      else {
         resolve(json)
+      }
     })
   })
 }
