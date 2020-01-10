@@ -36,22 +36,8 @@ internals.getBooks = async (request, h) => {
     // Convert the xml request response into json
     const responseJSON = await internals.scrapper.convert(response)
 
-    // Parse the json
+    // Parse the json and return
     const responseParsed = await internals.scrapper.parse(responseJSON)
-
-    // Send events for each book
-    request.server.inject({
-      method: 'POST',
-      url: '/books/events',
-      allowInternals: true,
-      payload: {
-        books: responseParsed.books.map((book) => ({
-          id: book.id,
-          isbn: book.isbn,
-          isbn13: book.isbn13
-        }))
-      }
-    })
 
     // Return the parsed json
     return responseParsed

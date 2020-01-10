@@ -13,6 +13,25 @@ const startServer = async function () {
     await server.start()
     console.log('Server running on %s', server.info.uri)
 
+    // Socket io plugin
+    const io = server.plugins['hapi-socket.io'].io
+
+    // Listen socket events
+    io.on('connection', (socket) => {
+
+      socket.on('getPrices', function (books) {
+
+        server.inject({
+          method: 'POST',
+          url: '/books/events',
+          allowInternals: true,
+          payload: {
+            books
+          }
+        })
+      })
+    })
+
     // General route
     server.route({
       method: 'GET',
