@@ -12,16 +12,15 @@
 <h4 align="center">:orange_book: A price tracker for your books listed on Goodreads as want-to-read .</h4>
 
 <p align="center">
-  <img width="600" height="335" src="https://i.imgur.com/Tp2xsSe.gif">
+  <img src="https://i.imgur.com/Tp2xsSe.gif">
 </p>
 
 <p align="center">
   <a href="#description">Description</a> •
   <a href="#composition">Composition</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#contribue">Contribute</a> •
-  <a href="#license">License</a>
+  <a href="#TODO">TODO</a> •
+  <a href="#DEMO">Demo</a>
 </p>
 
 ## Description
@@ -51,6 +50,28 @@ The project already has the latest version of the frontend compiled. However, yo
 
 2. Get the books from the `want-to-read` list and parse.
 
-3. For each book, get the price in the available stores, and send a [socket.io](https://socket.io/) event.
+3. For each book, get the price in the available stores, and send a [socket.io](https://socket.io/) event to the client.
 
-This tree points are the main steps of how the application works. The endpoint that send a request to the Goodreads API is the /user/books?
+This three points are the main steps of how the application works. The endpoint that sends a request to the Goodreads API is the **/user/books**.
+
+### How To Use
+
+1. `git clone`
+
+2. `npm install`
+
+3. Set environment variable `GOODREADS_API_KEY`
+
+You can read more about Goodreads API [here](https://www.goodreads.com/api).
+
+### TODO
+
+1. This application is just a sample of an idea, so it requires alot of **optimaizations**, like reducing the number of renders.
+
+2. Add **more shops**.
+
+3. Add **more options to the search**, like searching by a book isbn or name, instead of just searching by the Goodreads username. 
+
+### Demo
+
+https://cryptic-waters-92928.herokuapp.com/
