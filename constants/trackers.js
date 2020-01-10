@@ -5,22 +5,22 @@ const BERTRAND_URI = `https://www.bertrand.pt/pesquisa/`
 
 const trackers = new Map([
   ['BOOK_DEPOSITORY', {
-    name: 'BOOK_DEPOSITORY',
+    name: 'book_depository',
     uri: (isbn) => BOOKDEPOSITORY_URI + `searchIsbn=${isbn}`,
     transform: require('../utils/trackers/bookdepository')
   }],
   ['WOOK', {
-    name: 'WOOK',
+    name: 'wook',
     uri: (isbn) => WOOK_URI + isbn,
     transform: require('../utils/trackers/wook')
   }],
   ['FNAC', {
-    name: 'FNAC',
+    name: 'fnac',
     uri: (isbn) => FNAC_URI + isbn,
     transform: require('../utils/trackers/fnac')
   }],
   ['BERTRAND', {
-    name: 'BERTRAND',
+    name: 'bertrand',
     uri: (isbn) => BERTRAND_URI + isbn,
     transform: require('../utils/trackers/bertrand')
   }],
