@@ -5,7 +5,7 @@
     <img src="https://i.imgur.com/xl7Vpcl.png" alt="goodreadspricetracker" width="180">
     </a>
   <br>
-  Goodreads Price Tracker
+  Goodreads Price Tracker - Backend
   <br>
 </h1>
 
