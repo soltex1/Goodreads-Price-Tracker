@@ -1,13 +1,17 @@
 
 <h1 align="center">
   <br>
-    <a href="https://github.com/soltex1/goodreads-price-tracker-backend"><img src="https://cryptic-waters-92928.herokuapp.com/static/media/header.16a85765.png" alt="goodreadspricetracker" width="180"></a>
+    <a href="https://github.com/soltex1/goodreads-price-tracker-backend">
+    <img src="https://github.com/soltex1/goodreads-price-tracker-backend/logo.png" alt="goodreadspricetracker" width="180">
+    </a>
   <br>
   Goodreads Price Tracker
   <br>
 </h1>
 
-<h4 align="center">:orange_book: A price tracker for your books listed on Goodreads as want-to-read.</h4>
+<h4 align="center">:orange_book: A price tracker for your books listed on Goodreads as want-to-read .</h4>
+
+![](readme.gif)
 
 <p align="center">
   <a href="#description">Description</a> •
