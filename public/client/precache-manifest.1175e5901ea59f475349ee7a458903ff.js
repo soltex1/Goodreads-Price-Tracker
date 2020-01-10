@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "73cd7d11b97091b646eed27bee422f41",
+    "revision": "e7d37e75b66b74e559fe959a59b20d8b",
     "url": "/index.html"
   },
   {
-    "revision": "1a8d27a0b99e62f7076f",
-    "url": "/static/css/main.365e2a42.chunk.css"
+    "revision": "e66f98b93d0833094074",
+    "url": "/static/css/main.313bfeec.chunk.css"
   },
   {
-    "revision": "d1f4aaa30b02b56f1bce",
-    "url": "/static/js/2.13954856.chunk.js"
+    "revision": "b8a755df4e94b04e9e4a",
+    "url": "/static/js/2.c42acb41.chunk.js"
   },
   {
-    "revision": "1a8d27a0b99e62f7076f",
-    "url": "/static/js/main.86ab4fd8.chunk.js"
+    "revision": "4ebd4c934480c725a320d9506119b042",
+    "url": "/static/js/2.c42acb41.chunk.js.LICENSE"
   },
   {
-    "revision": "9aabb23bcbd2c9e69d36",
-    "url": "/static/js/runtime-main.baeb1881.js"
+    "revision": "e66f98b93d0833094074",
+    "url": "/static/js/main.7299ab8e.chunk.js"
+  },
+  {
+    "revision": "5f6c550a351459d0974d",
+    "url": "/static/js/runtime-main.08148462.js"
   },
   {
     "revision": "bf9490f36cb1dec94b3fb64481db85ca",
@@ -28,16 +32,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bookdep.a466e0d8.png"
   },
   {
-    "revision": "16a85765b646ff39705769ea6be9ec67",
-    "url": "/static/media/header.16a85765.png"
-  },
-  {
     "revision": "4506397f97d9d255bb001b663524e903",
     "url": "/static/media/loading.4506397f.gif"
   },
   {
     "revision": "e0c1a39c340b63761103a2b9bd819d25",
     "url": "/static/media/loading2.e0c1a39c.gif"
+  },
+  {
+    "revision": "16a85765b646ff39705769ea6be9ec67",
+    "url": "/static/media/logo.16a85765.png"
   },
   {
     "revision": "330a824939ddf16aac61dfd78822d6fc",
