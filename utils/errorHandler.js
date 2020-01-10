@@ -13,7 +13,7 @@ const internals = {}
 
 internals.errorHandler = (error) => {
 
-  const errorName = error.message || error.name
+  const errorName = error.name || error.message
 
   switch (errorName) {
     case TRANSFORM_ERROR:
