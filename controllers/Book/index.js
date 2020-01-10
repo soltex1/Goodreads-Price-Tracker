@@ -29,19 +29,21 @@ internals.sendEvents = (request, h) => {
       try {
 
         let bookPrice = 'N/A'
+        let uri = null
         const trackerName = tracker.name
 
         if (bookIsbn !== null) {
           bookPrice = await getPrice(tracker, bookId, bookIsbn)
+          uri = tracker.uri(bookIsbn)
         }
 
         if (bookPrice === 'N/A' && bookIsbn13 !== null) {
           bookPrice = await getPrice(tracker, bookId, bookIsbn13)
-
+          uri = tracker.uri(bookIsbn13)
         }
 
         // Send the event to the client
-        io.sockets.emit('book', { bookId, bookPrice, trackerName })
+        io.sockets.emit('book', { bookId, bookPrice, trackerName, uri })
 
       } catch (e) {
         console.log('event emit failed: ', e.message)
