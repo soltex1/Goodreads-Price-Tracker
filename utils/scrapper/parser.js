@@ -43,7 +43,7 @@ internals.parser = async (json) => {
  */
 internals.bookParser = (book) => {
 
-  const { id, isbn, isbn13, title, image_url, authors } = book
+  const { id, isbn, isbn13, title, image_url, authors, link } = book
 
   const author = authors[0] && authors[0].author[0] ? authors[0].author[0].name[0] : null
   const numPages = parseFloat(book.num_pages[0]) || null
@@ -60,11 +60,24 @@ internals.bookParser = (book) => {
     author,
     numPages,
     avgRating,
+    link: link ? link[0] : null,
     prices: {
-      bertrand: null,
-      book_depository: null,
-      fnac: null,
-      wook: null,
+      bertrand: {
+        value: null,
+        uri: null
+      },
+      book_depository: {
+        value: null,
+        uri: null
+      },
+      fnac: {
+        value: null,
+        uri: null
+      },
+      wook: {
+        value: null,
+        uri: null
+      },
     }
   }
 }

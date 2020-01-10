@@ -71,11 +71,24 @@ internals.routes = [
               numPages: Joi.number().allow(null),
               avgRating: Joi.number().required().allow(null),
               image_url: Joi.string().required(),
+              link: Joi.string().required().allow(null),
               prices: {
-                bertrand: Joi.string().allow(null),
-                book_depository: Joi.string().allow(null),
-                fnac: Joi.string().allow(null),
-                wook: Joi.string().allow(null)
+                bertrand: Joi.object({
+                  value: Joi.string().allow(null),
+                  uri: Joi.string().allow(null)
+                }),
+                book_depository: Joi.object({
+                  value: Joi.string().allow(null),
+                  uri: Joi.string().allow(null)
+                }),
+                fnac: Joi.object({
+                  value: Joi.string().allow(null),
+                  uri: Joi.string().allow(null)
+                }),
+                wook: Joi.object({
+                  value: Joi.string().allow(null),
+                  uri: Joi.string().allow(null)
+                }),
               }
             })
           ),
