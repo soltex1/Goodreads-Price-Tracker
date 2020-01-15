@@ -13,22 +13,34 @@ const internals = {}
  */
 internals.bookDepositoryParser = (body, response) => {
 
+  const prices = []
+
   if (response.statusCode === 200) {
 
     // Convert the body into DOM elements
     const dom = new JSDOM(body);
 
-    // Get the price from the DOM element
-    if (dom.window.document.getElementsByClassName('sale-price').length) {
-      const price = dom.window.document.getElementsByClassName('sale-price')[0].innerHTML
+    ['sale-price', 'list-price'].forEach((className) => {
 
-      if (price !== null) {
-        return parseFloat(price.replace(',', '.'))
+
+      // Get the price from the DOM element
+      if (dom.window.document.getElementsByClassName(className).length) {
+        const price = dom.window.document.getElementsByClassName(className)[0].innerHTML
+
+        // Match number
+        const regex = /[+-]?\d+(\.\d+)?/g
+
+        if (price.match(regex) !== null) {
+
+          let currentPrice = parseFloat(price.match(regex).join('.'))
+
+          if (!isNaN(currentPrice)) prices.push(currentPrice)
+        }
       }
-    }
+    })
   }
 
-  return 'N/A'
+  return prices.length ? Math.min.apply(null, prices) : 'N/A'
 }
 
 module.exports = internals.bookDepositoryParser

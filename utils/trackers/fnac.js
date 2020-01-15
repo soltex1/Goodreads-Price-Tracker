@@ -18,9 +18,7 @@ internals.fnacParser = (body, response) => {
   if (response.statusCode === 200) {
 
     // Convert the body into DOM elements
-    const dom = new JSDOM(body)
-
-    let minPrice = Number.MAX_SAFE_INTEGER;
+    const dom = new JSDOM(body);
 
     ['userPrice', 'price red'].forEach((className) => {
 
@@ -28,8 +26,12 @@ internals.fnacParser = (body, response) => {
       if (dom.window.document.getElementsByClassName(className).length) {
         const price = dom.window.document.getElementsByClassName(className)[0].innerHTML
 
-        if (price !== null) {
-          let currentPrice = parseFloat(price.replace(',', '.'))
+        // Match number
+        const regex = /[+-]?\d+(\.\d+)?/g
+
+        if (price.match(regex) !== null) {
+
+          let currentPrice = parseFloat(price.match(regex).join('.'))
 
           if (!isNaN(currentPrice)) prices.push(currentPrice)
         }

@@ -25,8 +25,11 @@ internals.bertrandParser = (body, response) => {
       if (dom.window.document.getElementsByClassName('active-price').length) {
         const price = dom.window.document.getElementsByClassName('active-price')[0].innerHTML
 
-        if (price !== null) {
-          return parseFloat(price.replace(',', '.'))
+        // Match number
+        const regex = /[+-]?\d+(\.\d+)?/g
+
+        if (price.match(regex) !== null) {
+          return parseFloat(price.match(regex).join('.'))
         }
       }
     }
