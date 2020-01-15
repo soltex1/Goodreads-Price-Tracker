@@ -18,6 +18,7 @@
 <p align="center">
   <a href="#description">Description</a> •
   <a href="#composition">Composition</a> •
+  <a href="#how-it-works">How It Works</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#TODO">TODO</a> •
   <a href="#DEMO">Demo</a> •
