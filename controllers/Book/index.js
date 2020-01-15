@@ -1,7 +1,6 @@
 // Imports
 const { getPrice } = require('../../utils/trackers')
 const { trackers } = require('../../constants/trackers')
-const ErrorHandler = require('../../utils/errorHandler')
 
 // Declare internals
 const internals = {}
