@@ -21,7 +21,7 @@
   <a href="#how-to-use">How To Use</a> •
   <a href="#TODO">TODO</a> •
   <a href="#DEMO">Demo</a> •
-  <a href="#DEMO">Notes</a>
+  <a href="#Notes">Notes</a>
 </p>
 
 ## Description
