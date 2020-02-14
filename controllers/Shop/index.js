@@ -32,7 +32,7 @@ internals.getPrices = async (request, h) => {
         price = await getPrice(tracker, '', isbn)
         uri = tracker.uri(isbn)
       }
-
+console.log('>>', name, price)
       response.push({ price, tracker: name, uri })
 
     } catch (e) {
