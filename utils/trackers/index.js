@@ -19,11 +19,20 @@ internals.getPrice = (tracker, bookId, bookIsbn) => {
   }
 
   // Make the request, parse it and return the price or 'N/A' if it fails
-  return RequestPromise(requestOptions)
+  return withTimeout(5000, RequestPromise(requestOptions))
     .then((price) => price)
     .catch((e) =>  'N/A')
 }
 
 module.exports = {
   getPrice: internals.getPrice
+}
+
+function withTimeout(msecs, promise) {
+  const timeout = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('timeout'));
+    }, msecs);
+  });
+  return Promise.race([timeout, promise]);
 }
