@@ -1,5 +1,6 @@
 const Book = require('./Book')
 const User = require('./User')
+const Shop = require('./Shop')
 
 exports.plugin = {
   name: 'controllers',
@@ -9,7 +10,8 @@ exports.plugin = {
       // child controllers
       await server.register([
         Book,
-        User
+        User,
+        Shop
       ], options)
 
       server.log('controllers', 'loaded')
