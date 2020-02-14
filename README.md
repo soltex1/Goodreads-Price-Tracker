@@ -21,6 +21,7 @@
   <a href="#how-it-works">How It Works</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#TODO">TODO</a> •
+  <a href="#endpoints">Endpoints</a> •
   <a href="#DEMO">Demo</a> •
   <a href="#Notes">Notes</a>
 </p>
@@ -74,6 +75,10 @@ You can read more about Goodreads API [here](https://www.goodreads.com/api).
 
 3. Add **more options to the search**, like searching by a book isbn or name, instead of just searching by the Goodreads username. 
 
+### Endpoints
+
+There is an endpoint that lets you get the books prices from all stores by using the isbn. You can make a GET request to **/shops/prices?isbn=ISBN_NUM** for instance: https://cryptic-waters-92928.herokuapp.com/shops/prices?isbn=9781451673319.
+
 ### Demo
 
 https://cryptic-waters-92928.herokuapp.com/
@@ -81,3 +86,4 @@ https://cryptic-waters-92928.herokuapp.com/
 ### Notes
 
 Each book has many versions, each one with an isbn and/or isbn13, and sometimes the stores does not have all those versions. Goodreads usually has many versions of the same book, because of that, to get some reasonable results, it is important to add the right version to the Goodreads.
+
