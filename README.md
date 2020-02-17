@@ -87,3 +87,4 @@ https://cryptic-waters-92928.herokuapp.com/
 
 Each book has many versions, each one with an isbn and/or isbn13, and sometimes the stores does not have all those versions. Goodreads usually has many versions of the same book, because of that, to get some reasonable results, it is important to add the right version to the Goodreads.
 
+**In order to get better results I recommend you to run this locally** because the Heroku has a timeout after 30 seconds without a response. So, I had to add a timeout of 5 seconds for each shop, and sometimes that time is not enough to finish the request between the server and the shop.
