@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "acorn": "^7.1.1",
     "axios": "^0.19.1",
+    "minimis": "^0.1.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
