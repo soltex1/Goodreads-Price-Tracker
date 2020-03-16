@@ -1,0 +1,173 @@
+
+.Table-Normal {
+    position: relative;
+    margin: 10px auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    border-collapse:separate;
+    border-spacing:0 40px;
+}
+
+
+
+.Table-Normal tr td {
+    background-color: white;
+    margin: 0;
+    padding: 4px 8px;
+    margin-bottom: 25px;
+    height: 140px;
+}
+
+
+.Table-Normal tr td:nth-child(1) {
+    padding-left: 20px;
+}
+
+
+.Table-Normal tr td:nth-child(2) {
+    word-wrap: break-word;
+    width: 50%;
+    text-align:left;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+.Table-Normal tr td:nth-child(2) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin:10px;
+}
+
+.Table-Normal tr td:nth-child(3) {
+    width:15%;
+}
+
+
+.Table-Normal tr td:nth-child(4) {
+    width:5%;
+}
+
+.Table-Normal tr td:nth-child(5) {
+    justify-content: flex-start;
+    width:7%;
+}
+
+.Table-Normal tr td:nth-child(2) p:nth-child(n+3) {
+    color: #9e9e9e;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Table-Normal tr td:nth-child(3) {
+    color: #9e9e9e;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align:left;
+
+}
+
+.Table-Normal tr td:nth-child(4) {
+    color: #696969;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align:left;
+
+}
+
+.Table-Normal tr td:nth-child(5) {
+    color: #9e9e9e;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align:left;
+
+}
+
+.Table-Normal tr td:nth-child(2) p:nth-child(1) {
+    font-weight:bold;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Table-Normal tr td:nth-child(2) p:nth-child(2) {
+    color: #9e9e9e;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bookStandIcon {
+    float: left;
+    margin: 10px;
+}
+
+.bookRowWrapper {
+    width:100%;
+}
+
+.storeName {
+    min-width: 150px;
+
+    text-align:right;
+    color: #ffa830;
+    font-weight: bolder;
+    font-size: 15px;
+    max-height:55px;
+    padding: 10px;
+}
+
+.storeNameWrapper {
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    max-height:40px;
+}
+
+.storePrice {
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    max-height:40px;
+    min-height:40px;
+}
+
+.euroSymbol {
+    justify-content: center;
+}
+
+.bookDetails {
+    width: 100%;
+}
+
+.bookAuthor {
+    float:left;
+}
+
+.bookPages {
+    float:left;
+}
+
+.bookRating {
+    float:left;
+}
+
+.bookPriceLoading {
+    width:35px;
+}
+
+.min {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+}
+
+.normal {
+    font-size: 14px;
+    color: #757575;
+
+}

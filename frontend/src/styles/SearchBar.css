@@ -1,0 +1,42 @@
+
+
+input {
+    border:none;
+    height: 40px;
+    font-size: 20px;
+    color: #757575;
+    width: 95%;
+}
+
+.formContainer {
+    width: 80%;
+    padding: 5px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+    margin-left:10px;
+    margin-bottom: 20px;
+}
+
+.submitInput {
+    background: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+.formContainer img {
+    height: 25px;
+}
+
+form {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}

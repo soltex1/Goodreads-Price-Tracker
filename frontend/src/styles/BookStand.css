@@ -1,0 +1,44 @@
+.bookStand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height:160px;
+}
+
+.bookStand img {
+    border-radius: 4px;
+    box-shadow: -2px 0 5px 2px rgba(0, 0, 0, 0.32);
+    z-index: 1;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 160px;
+    max-height: 160px;
+    position: relative;
+    top: -20px;
+}
+
+.bookStand img:hover {
+    transform: scale(1.05)
+}
+
+.bookStandBottom {
+    content: '';
+    background: rgb(214, 214, 214);
+    height: 10px;
+    width: 150px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.bookStandTop {
+    border-bottom: 12px solid rgb(242, 242, 242);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    width: 110px;
+    position: absolute;
+    bottom: 15px;
+}

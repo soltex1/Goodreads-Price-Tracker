@@ -1,0 +1,63 @@
+body {
+    background-color: #feb858;
+}
+
+.booksContent {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.booksContentTitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.booksContent p:nth-child(2), p:nth-child(3) {
+    text-align: center;
+    color:white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.booksContent p:nth-child(2) span {
+    color: black;
+    box-shadow: inset 0 0 0 white, inset 0 -15px 0 #fed092;
+}
+
+.booksContent p {
+    margin: 0;
+}
+
+.loadMore {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadMore button {
+    cursor: pointer;
+    background: white;
+    padding: 14px;
+    border-radius: 20px;
+    color: #feb858;
+    font-weight: bolder;
+    font-size: 16px;
+    margin-bottom: 40px;
+    border: 1px solid #feb858;
+}
+
+.loadMore button:hover{
+    background: #fff6eb;
+    padding: 15px;
+    border:none;
+    border-radius: 20px;
+    color: #feb858;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.loadMore button:focus {
+    outline:none;
+}
