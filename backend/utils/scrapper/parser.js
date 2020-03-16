@@ -1,5 +1,5 @@
 // Imports
-const ErrorHandler = require('../../utils/errorHandler')
+const ErrorHandler = require('../errorHandler')
 
 // Declare internals
 const internals = {}
