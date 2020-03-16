@@ -35,14 +35,12 @@ const startServer = async function () {
     // General route
     server.route({
       method: 'GET',
-      path: '/{path*}',
-      handler: (request, h) => {
-
-        if (request.params.path && request.params.path.startsWith('static')) {
-          return h.file(`public/client/${request.params.path}`)
+      path: '/{param*}',
+      handler: {
+        directory: {
+          path: '.',
+          redirectToSlash: true
         }
-
-        return h.file('public/client/index.html')
       }
     })
 

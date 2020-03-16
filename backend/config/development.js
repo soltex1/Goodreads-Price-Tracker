@@ -12,6 +12,9 @@ const getConfig = () => ({
     },
     port: process.env.PORT,
     routes: {
+      files: {
+        relativeTo: Path.join(__dirname, '../public/client')
+      },
       cors: true
     }
   },
@@ -46,8 +49,7 @@ const getConfig = () => ({
         plugin: require('hapi-socket.io'),
         options: {
           auth: 'jwt',
-          socketoptions: {
-          }
+          socketoptions: {}
         }
       },
       {
