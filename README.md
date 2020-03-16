@@ -1,11 +1,11 @@
 
 <h1 align="center">
   <br>
-    <a href="https://github.com/soltex1/goodreads-price-tracker-backend">
+    <a href="https://github.com/soltex1/goodreads-price-tracker">
     <img src="https://i.imgur.com/xl7Vpcl.png" alt="goodreadspricetracker" width="180">
     </a>
   <br>
-  Goodreads Price Tracker - Backend
+  Goodreads Price Tracker
   <br>
 </h1>
 
@@ -41,8 +41,8 @@ I am an active user on [Goodreads](https://www.goodreads.com/), who is always up
 
 This application is divided in two parts:
 
-* [Backend](https://github.com/soltex1/goodreads-price-tracker-backend) **Node**
-* [Frontend](https://github.com/soltex1/goodreads-price-tracker-frontend) **React**
+* [Backend](./backend) **Node**
+* [Frontend](./frontend) **React**
 
 The project already has the latest version of the frontend compiled. However, you can also access the source code repository through the link above.
 
