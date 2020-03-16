@@ -1,5 +1,5 @@
 {
-  "name": "goodreads-price-tracker",
+  "name": "Goodreads-Price-Tracker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soltex1/goodreads-price-tracker.git"
+    "url": "git+https://github.com/soltex1/Goodreads-Price-Tracker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/soltex1/goodreads-price-tracker/issues"
+    "url": "https://github.com/soltex1/Goodreads-Price-Tracker/issues"
   },
-  "homepage": "https://github.com/soltex1/goodreads-price-tracker#readme",
+  "homepage": "https://github.com/soltex1/Goodreads-Price-Tracker#readme",
   "dependencies": {
     "@hapi/boom": "^8.0.1",
     "@hapi/glue": "^6.2.0",
