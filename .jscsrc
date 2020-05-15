@@ -1,0 +1,7 @@
+{
+  "preset": "jquery",
+  "requireCurlyBraces": null,
+  "requireSpacesInsideParentheses": null,
+  "requireSpacesInsideBrackets": null,
+  "requireOperatorBeforeLineBreak": null
+}
