@@ -15,7 +15,7 @@ const storeNames = new Map([
 
 const BookRow = function BookRow({ book }) {
 
-  const { id, title, author, numPages, avgRating, prices, imageUrl, link } = book;
+  const { title, author, numPages, avgRating, prices, imageUrl, link } = book;
 
   const min = Math.min.apply(null, Object.values(prices).filter(({ value, _ }) => value !== null && parseInt(value)).map((price) => price.value));
 
@@ -47,7 +47,7 @@ const BookRow = function BookRow({ book }) {
           ? <img alt={"loading"} src={Loading} className={"bookPriceLoading"}/>
           : typeof value === "string"
           ? <p>{value}</p>
-          : <a target="_blank" href={uri} className={min === value ? "min" : "normal"}>
+          : <a target="_blank" rel="noopener noreferrer" href={uri} className={min === value ? "min" : "normal"}>
             <p>{value}</p>
           </a>
       }

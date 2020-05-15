@@ -5,7 +5,7 @@ import "../styles/BookStand.css";
 function BookStand ({ img, link }) {
   return (
     <div className="bookStand">
-      <a target="_blank" href={link}>
+      <a target="_blank" rel="noopener noreferrer" href={link}>
         <img alt="bookStandImg" src={img}/>
       </a>
       <div className="bookStandTop"/>

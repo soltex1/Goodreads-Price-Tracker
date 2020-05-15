@@ -7,9 +7,10 @@ import BooksLoadMore from "./BooksLoadMore";
 import BooksMessage from "./BooksMessage";
 import BooksSearchBar from "./BooksSearchBar";
 import { getBooks, updateBook, setBookPricesTimeout } from "../actions/books";
+import { SERVER_URL } from "../constants";
 import "../styles/BooksContent.css";
 
-const socket = io.connect("http://localhost:3002/");
+const socket = io.connect(SERVER_URL);
 
 function BooksContent () {
 
@@ -35,7 +36,7 @@ function BooksContent () {
     currentQuery = currentQuery.trim().toLowerCase();
 
     if (currentQuery !== "") {
-      if (data.books && data.books.length || data.meta || data.error) {
+      if ((data.books && data.books.length) || data.meta || data.error) {
         resetState();
       }
 

@@ -1,11 +1,13 @@
 // Imports
-const axios = require("axios");
+import axios from "axios";
+
+import { SERVER_URL } from "../constants";
 
 // Load books
 export const getBooks = async (userId = "53242860", page = 1, books) => {
   try {
 
-    const response = await axios(`http://localhost:3002/user/books?userId=${userId}&page=${page}`);
+    const response = await axios(`${SERVER_URL}/user/books?userId=${userId}&page=${page}`);
 
     // Returns an object { books, meta }
     return {
