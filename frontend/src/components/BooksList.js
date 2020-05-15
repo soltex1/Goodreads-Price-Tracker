@@ -1,16 +1,18 @@
-import React from 'react'
-import BookRow from './BookRow'
+import React from "react";
 
-function BooksList ({ books }) {
+import BookRow from "./BookRow";
 
-  return <div className={'tableWrapper'}>
-    <table className="Table-Normal">
-      <thead/>
-      <tbody>
-      {books.map((book) => <BookRow key={book.id} book={book}/>)}
-      </tbody>
-    </table>
-  </div>
-}
+const BooksList = function BooksList(props) {
+  return (
+    <div className={"tableWrapper"}>
+      <table className="Table-Normal">
+        <thead/>
+        <tbody>
+        {props.books.map((book) => <BookRow key={book.id} book={book}/>)}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
-export default BooksList
+export default BooksList;

@@ -15,7 +15,7 @@ body {
 
 .booksContent p:nth-child(2), p:nth-child(3) {
     text-align: center;
-    color:white;
+    color: white;
     font-size: 40px;
     font-weight: bold;
 }
@@ -48,10 +48,10 @@ body {
     border: 1px solid #feb858;
 }
 
-.loadMore button:hover{
+.loadMore button:hover {
     background: #fff6eb;
     padding: 15px;
-    border:none;
+    border: none;
     border-radius: 20px;
     color: #feb858;
     font-weight: bolder;
@@ -59,5 +59,5 @@ body {
 }
 
 .loadMore button:focus {
-    outline:none;
+    outline: none;
 }

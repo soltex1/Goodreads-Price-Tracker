@@ -1,18 +1,88 @@
 // Imports
-const axios = require('axios')
+const axios = require("axios");
 
 // Load books
-export const getBooks = async (userId = '53242860', page = 1) => {
+export const getBooks = async (userId = "53242860", page = 1, books) => {
   try {
 
-    const response = await axios(
-      `http://localhost:3002/user/books?userId=${userId}&page=${page}`
-    )
+    const response = await axios(`http://localhost:3002/user/books?userId=${userId}&page=${page}`);
 
-    return response
+    // Returns an object { books, meta }
+    return {
+      books: books === null
+        ? response.data.books
+        : [...books, ...response.data.books],
+      meta: response.data.meta
+    };
 
   } catch (err) {
-    console.log('ERROR', err.response)
-    return err.response
+
+    const error = err.response.statusCode === 404
+      ? "Your search did not return any results."
+      : "An error occurred. Please try again later.";
+
+    return { error };
   }
-}
+};
+
+export const updateBook = (books, bookDetails) => {
+  try {
+
+    const newBooks = [...books];
+
+    // Find index of the book to update
+    const bookIndex = newBooks.findIndex((book) => book.id === bookDetails.bookId.toString());
+
+    if (bookIndex !== -1) {
+      newBooks[bookIndex] = {
+        ...newBooks[bookIndex],
+        prices: {
+          ...newBooks[bookIndex].prices,
+          [bookDetails.trackerName]: {
+            value: bookDetails.bookPrice,
+            uri: bookDetails.uri
+          }
+        }
+      };
+    }
+
+    return newBooks;
+
+  } catch (err) {
+    return err;
+  }
+};
+
+export const setBookPricesTimeout = (setData, setTimer, timer) => {
+
+  if (timer) {
+    clearTimeout(timer);
+  }
+
+  setTimer(setTimeout(function() {
+
+      setData((previousData) => {
+
+        let newBooks = [...previousData.books];
+
+        newBooks = newBooks.map((book) => {
+
+          Object.keys(book.prices).forEach((store) => {
+            if (!book.prices[store].value) {
+              book.prices[store].value = "N/A";
+            }
+          });
+
+          return book;
+        });
+
+        return {
+          books: newBooks,
+          ...previousData
+        };
+      });
+
+    },
+    60000
+  ));
+};

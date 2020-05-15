@@ -1,15 +1,18 @@
-import React from 'react'
-import Header from './Header'
-import BooksContent from './BooksContent'
-import Footer from './Footer'
+import React from "react";
 
-function Books (props) {
+import Header from "./Header";
+import BooksContent from "./BooksContent";
+import Footer from "./Footer";
 
-  return <div>
-    <Header/>
-    <BooksContent/>
-    <Footer/>
-  </div>
+function Books () {
+
+  return (
+    <div>
+      <Header/>
+      <BooksContent/>
+      <Footer/>
+    </div>
+  );
 }
 
-export default Books
+export default Books;
