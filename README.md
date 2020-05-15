@@ -77,11 +77,11 @@ You can read more about Goodreads API [here](https://www.goodreads.com/api).
 
 ### Endpoints
 
-There is an endpoint that lets you get the books prices from all stores by using the isbn. You can make a GET request to **/shops/prices?isbn=ISBN_NUM** for instance: https://cryptic-waters-92928.herokuapp.com/shops/prices?isbn=9781451673319.
+There is an endpoint that lets you get the books prices from all stores by using the isbn. You can make a GET request to **/shops/prices?isbn=ISBN_NUM** for instance: https://goodreads-price-tracker.herokuapp.com//shops/prices?isbn=9781451673319.
 
 ### Demo
 
-https://cryptic-waters-92928.herokuapp.com/
+https://goodreads-price-tracker.herokuapp.com/
 
 ### Notes
 
