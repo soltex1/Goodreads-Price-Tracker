@@ -1,53 +1,53 @@
-'use strict'
+"use strict";
 
-const Glue = require('@hapi/glue')
-const Manifest = require('./manifest')
+const Glue = require("@hapi/glue");
+const Manifest = require("./manifest");
 
 const options = {
   relativeTo: __dirname
-}
+};
 
-const startServer = async function () {
+const startServer = async function() {
   try {
-    const server = await Glue.compose(Manifest, options)
-    await server.start()
-    console.log('Server running on %s', server.info.uri)
+    const server = await Glue.compose(Manifest, options);
+    await server.start();
+    console.log("Server running on %s", server.info.uri);
 
     // Socket io plugin
-    const io = server.plugins['hapi-socket.io'].io
+    const io = server.plugins["hapi-socket.io"].io;
 
-    // Listen socket events
-    io.on('connection', (socket) => {
+    // Listen socket event
+    io.on("connection", (socket) => {
 
-      socket.on('getPrices', function (books) {
-
+      socket.on("getPrices", function(books) {
         server.inject({
-          method: 'POST',
-          url: '/books/events',
+          method: "POST",
+          url: "/books/events",
           allowInternals: true,
           payload: {
             books
           }
-        })
-      })
-    })
+        });
+      });
+
+    });
 
     // General route
     server.route({
-      method: 'GET',
-      path: '/{param*}',
+      method: "GET",
+      path: "/{param*}",
       handler: {
         directory: {
-          path: '.',
+          path: ".",
           redirectToSlash: true
         }
       }
-    })
+    });
 
   } catch (err) {
-    console.error(err)
-    process.exit(1)
+    console.error(err);
+    process.exit(1);
   }
-}
+};
 
-startServer()
+startServer();

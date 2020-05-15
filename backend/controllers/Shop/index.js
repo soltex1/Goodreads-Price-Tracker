@@ -1,11 +1,11 @@
 // Imports
-const Joi = require('@hapi/joi')
+const Joi = require("@hapi/joi");
 
-const { getPrice } = require('../../utils/trackers')
-const { trackers } = require('../../constants/trackers')
+const { getPrice } = require("../../utils/trackers");
+const { trackers } = require("../../constants/trackers");
 
 // Declare internals
-const internals = {}
+const internals = {};
 
 /**
  * Get the prices of a book from all registered stores.
@@ -15,51 +15,51 @@ const internals = {}
  */
 internals.getPrices = async (request, h) => {
 
-  let { isbn } = request.query
+  let { isbn } = request.query;
 
-  isbn = isbn.replace(/\s+/g, '')
+  isbn = isbn.replace(/\s+/g, "");
 
-  const response = []
+  const response = [];
 
   // For each tracker, get the price and emit an event
   await Promise.all([...trackers].map(async ([name, tracker]) => {
     try {
 
-      let price = null
-      let uri = null
+      let price = null;
+      let uri = null;
 
       if (isbn !== null) {
-        price = await getPrice(tracker, '', isbn)
-        uri = tracker.uri(isbn)
+        price = await getPrice(tracker, "", isbn);
+        uri = tracker.uri(isbn);
       }
 
-      response.push({ price, tracker: name, uri })
+      response.push({ price, tracker: name, uri });
 
     } catch (e) {
-      console.log(e.message)
+      console.log(e.message);
     }
-  }))
+  }));
 
-  return h.response(response)
-}
+  return h.response(response);
+};
 
 internals.routes = [
   {
-    method: 'GET',
-    path: '/shops/prices',
+    method: "GET",
+    path: "/shops/prices",
     handler: internals.getPrices,
     options: {
       validate: {
         query: Joi.object({
           isbn: Joi.string().required()
-        }),
+        })
       },
       response: {
         schema: Joi.array().items(
           Joi.object({
             price: Joi.alternatives().try(
               Joi.number(),
-              Joi.string().valid('N/A')
+              Joi.string().valid("N/A")
             ),
             tracker: Joi.string(),
             uri: Joi.string()
@@ -68,14 +68,14 @@ internals.routes = [
       }
     }
   }
-]
+];
 
 exports.plugin = {
-  name: 'shop',
-  version: '1.0.0',
-  register: async (server, options) => {
+  name: "shop",
+  version: "1.0.0",
+  register: async (server) => {
 
     // Routes
-    server.route(internals.routes)
+    server.route(internals.routes);
   }
-}
+};

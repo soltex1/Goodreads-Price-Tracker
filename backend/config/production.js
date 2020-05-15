@@ -3,12 +3,8 @@ const Path = require("path");
 const getConfig = () => ({
   server: {
     app: {
-      environment: "development",
+      environment: "production",
       hostname: process.env.HOSTNAME
-    },
-    debug: {
-      log: ["error"],
-      request: ["error"]
     },
     port: process.env.PORT,
     routes: {
@@ -20,27 +16,6 @@ const getConfig = () => ({
   },
   register: {
     plugins: [
-      {
-        plugin: require("@hapi/good"), // Logging
-        options: {
-          ops: {
-            interval: 60000
-          },
-          reporters: {
-            myConsoleReporter: [
-              {
-                module: "@hapi/good-squeeze",
-                name: "Squeeze",
-                args: [{ log: "*", response: "*", ops: "*" }]
-              },
-              {
-                module: "@hapi/good-console"
-              },
-              "stdout"
-            ]
-          }
-        }
-      },
       {
         plugin: require("inert")
       },

@@ -3,7 +3,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 // Declare internals
-const internals = {}
+const internals = {};
 
 /**
  * Parse the response from wook tracker request.
@@ -18,24 +18,25 @@ internals.bertrandParser = (body, response) => {
     // Convert the body into DOM elements
     const dom = new JSDOM(body);
 
-    const count = parseInt(dom.window.document.getElementsByClassName('search-results-label')[0].querySelector('h1').innerHTML.split(' ')[0]) || 0
+    const count = parseInt(dom.window.document.getElementsByClassName("search-results-label")[0].querySelector("h1").innerHTML.split(" ")[0]) || 0;
 
     if (count > 0) {
+
       // Get the price from the DOM element
-      if (dom.window.document.getElementsByClassName('active-price').length) {
-        const price = dom.window.document.getElementsByClassName('active-price')[0].innerHTML
+      if (dom.window.document.getElementsByClassName("active-price").length) {
+        const price = dom.window.document.getElementsByClassName("active-price")[0].innerHTML;
 
         // Match number
-        const regex = /[+-]?\d+(\.\d+)?/g
+        const regex = /[+-]?\d+(\.\d+)?/g;
 
         if (price.match(regex) !== null) {
-          return parseFloat(price.match(regex).join('.'))
+          return parseFloat(price.match(regex).join("."));
         }
       }
     }
   }
 
-  return 'N/A'
-}
+  return "N/A";
+};
 
-module.exports = internals.bertrandParser
+module.exports = internals.bertrandParser;

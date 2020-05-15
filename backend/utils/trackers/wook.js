@@ -3,7 +3,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 // Declare internals
-const internals = {}
+const internals = {};
 
 /**
  * Parse the response from wook tracker request.
@@ -13,26 +13,26 @@ const internals = {}
  */
 internals.wookParser = (body, response) => {
 
-  const prices = []
+  const prices = [];
   if (response.statusCode === 200) {
 
     // Convert the body into DOM elements
     const dom = new JSDOM(body);
 
     // Get the price from the DOM element
-    if (dom.window.document.getElementsByClassName('current').length) {
-      const price = dom.window.document.getElementsByClassName('current')[0].innerHTML
+    if (dom.window.document.getElementsByClassName("current").length) {
+      const price = dom.window.document.getElementsByClassName("current")[0].innerHTML;
 
       // Match number
-      const regex = /[+-]?\d+(\.\d+)?/g
+      const regex = /[+-]?\d+(\.\d+)?/g;
 
       if (price.match(regex) !== null) {
-        return parseFloat(price.match(regex).join('.'))
+        return parseFloat(price.match(regex).join("."));
       }
     }
   }
 
-  return 'N/A'
-}
+  return "N/A";
+};
 
-module.exports = internals.wookParser
+module.exports = internals.wookParser;
