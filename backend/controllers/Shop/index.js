@@ -15,6 +15,8 @@ const internals = {};
  */
 internals.getPrices = async (request, h) => {
 
+  console.log('DEBUG')
+
   let { isbn } = request.query;
 
   isbn = isbn.replace(/\s+/g, "");
